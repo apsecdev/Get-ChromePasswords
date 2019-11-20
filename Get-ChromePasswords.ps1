@@ -25,7 +25,9 @@ Param(
 
 get-process -erroraction SilentlyContinue -name "chrome" | stop-process 
 
+Push-Location $PSScriptRoot
 . .\SQLLibraries.ps1
+Pop-Location
 
 if ([String]::IsNullOrEmpty($Path)) {
     # -Force to show hidden files/directories
